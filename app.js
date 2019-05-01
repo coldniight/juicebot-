@@ -32,10 +32,6 @@ bot.on('message', async message => { // Message Functions
 
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot,message,args);
-
-     if(message.channel.id === "573275994337706014"){
-     if(!(message.content("j!verify"))) return message.delete();
- }
 });
 
 bot.on('ready', async () => { // Bot on login
