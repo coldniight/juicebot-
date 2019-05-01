@@ -60,12 +60,12 @@ bot.on('guildMemberAdd', member => { // On member join
 
     let instrembed = new Discord.RichEmbed()
     .setTitle("Juice Bot")
-    .setDescription(`Welcome to **Juice**, ${message.author}. To verify say \`j!verify\` in the <#573275994337706014> channel.`)
+    .setDescription(`Welcome to **Juice**, ${member}. To verify say \`j!verify\` in the <#573275994337706014> channel.`)
     .setColor(0x00fffa)
-    .setFooter(message.id)
+    .setFooter(member.id)
     .setTimestamp();
 
-    let instructionschannel = message.guild.channels.find(`id`, `573275979934334996`)
+    let instructionschannel = member.guild.channels.find(`id`, `573275979934334996`)
     instructionschannel.send(instrembed);
 });
 
