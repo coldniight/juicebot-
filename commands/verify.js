@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
-    let verifiedrole = message.guild.roles('name', 'Verified');
-    let unverifiedrole = message.guild.roles('name', 'Unverified');
+    let verifiedrole = message.guild.roles.find('name', 'Verified');
+    let unverifiedrole = message.guild.roles.find('name', 'Unverified');
 
     let alreadyembed = new Discord.RichEmbed()
     .setTitle("Juice Bot")
