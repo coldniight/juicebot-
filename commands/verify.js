@@ -12,8 +12,8 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp();
 
     if(!message.member.roles.has(unverifiedrole.id)) return message.channel.send(alreadyembed);
-    message.member.addRole(verifiedrole.id);
-    message.member.removeRole(unverifiedrole.id);
+    message.author.addRole(verifiedrole.id);
+    message.author.removeRole(unverifiedrole.id);
 }
 
 module.exports.help = {
