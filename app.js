@@ -58,26 +58,15 @@ bot.on('guildMemberAdd', member => { // On member join
     var role = member.guild.roles.find('name', 'Unverified');
     member.addRole(role);
 
-    let alreadyembed = new Discord.RichEmbed()
+    let instrembed = new Discord.RichEmbed()
     .setTitle("Juice Bot")
-    .setDescription(`You're already verified, ${message.author}.`)
+    .setDescription(`Welcome to **Juice**, ${message.author}. To verify say \`j!verify\` in the <#573275994337706014> channel.`)
     .setColor(0x00fffa)
     .setFooter(message.id)
     .setTimestamp();
 
-    let instructionembed = new Discord.RichEmbed()
-    .setTitle("Juice Bot")
-    .setDescription(`Welcome to **${message.guild}**, ${message.author}. To verify say \`j!verify\` in the <#573275994337706014> channel.`)
-    .setColor(0x00fffa)
-    .setFooter(message.id)
-    .setTimestamp();
-
-    if(!message.member.roles.has(role.id)) return message.channel.send(alreadyembed);
-
-    setTimeout(function() {
-        let instructionschannel = message.guild.channels.find(`id`, `573275979934334996`);
-        instructionschannel.send(instructionembed);
-    }, 1000);
+    let instructionschannel = message.guild.channels.find(`id`, `573275979934334996`)
+    instructionschannel.send(instrembed);
 });
 
 bot.login(process.env.token);
