@@ -34,7 +34,7 @@ bot.on('message', async message => { // Message Functions
     if(commandfile) commandfile.run(bot,message,args);
 
      if(message.channel.id === "573275994337706014"){
-     if(!message.content("j!verify")) return message.delete();
+     if(!(message.content("j!verify"))) return message.delete();
  }
 });
 
