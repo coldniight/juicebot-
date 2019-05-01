@@ -72,7 +72,7 @@ bot.on('guildMemberAdd', member => { // On member join
     .setFooter(message.id)
     .setTimestamp();
 
-    if(message.member.roles.has('Verified')) return message.channel.send(alreadyembed);
+    if(!message.member.roles.has(role.id)) return message.channel.send(alreadyembed);
 
     setTimeout(function() {
         let instructionschannel = message.guild.channels.find(`id`, `573275979934334996`);
