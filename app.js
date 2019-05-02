@@ -72,7 +72,7 @@ bot.on('guildMemberAdd', member => { // On member join
     
     let welembed = new Discord.RichEmbed()
     .setTitle("Juice Bot")
-    .setDescription(`${member} just joined the server. Welcome to Juice:yellow_heart: :tada::hugging: !`)
+    .setDescription(`${member} just joined the server. Welcome to Juice:blue_heart:  :tada::hugging: !`)
     .setColor(0x00fffa)
     .setFooter(member.id)
     .setTimestamp();
@@ -87,12 +87,12 @@ bot.on('guildMemberAdd', member => { // On member join
 bot.on('guildMemberRemove', member => {
      let byeembed = new Discord.RichEmbed()
     .setTitle("Juice Bot")
-    .setDescription(`${member} just left the server :cbpensive:`)
+    .setDescription(`${member} just left the server :pensive:`)
     .setColor(0x00fffa)
     .setFooter(member.id)
     .setTimestamp();
     
-    member.guild.channels.get("568241349946769409").send(byeembed);
+    member.guild.channels.get("568255907167993857").send(byeembed);
 })
 
 bot.login(process.env.token);
