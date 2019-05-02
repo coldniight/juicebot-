@@ -69,9 +69,30 @@ bot.on('guildMemberAdd', member => { // On member join
     .setColor(0x00fffa)
     .setFooter(member.id)
     .setTimestamp();
+    
+    let welembed = new Discord.RichEmbed()
+    .setTitle("Juice Bot")
+    .setDescription(`${member} just joined the server. Welcome to Juice:yellow_heart: :tada::hugging: !`)
+    .setColor(0x00fffa)
+    .setFooter(member.id)
+    .setTimestamp();
+
 
     let instructionschannel = member.guild.channels.find(`id`, `573275979934334996`)
     instructionschannel.send(instrembed);
+    
+    member.guild.channels.get("568241349946769409").send(welembed);
 });
+
+bot.on('guildMemberRemove', member => {
+     let byeembed = new Discord.RichEmbed()
+    .setTitle("Juice Bot")
+    .setDescription(`${member} just left the server :cbpensive:`)
+    .setColor(0x00fffa)
+    .setFooter(member.id)
+    .setTimestamp();
+    
+    member.guild.channels.get("568241349946769409").send(byeembed);
+})
 
 bot.login(process.env.token);
